@@ -15,13 +15,14 @@ a {
 }
 
 a:focus {
-  outline: none;
+  outline: 2px solid blue;
 }
 
 .site-header,
 main,
 footer {
-  width: 1100px;
+  width: 100%;
+  max-width: 1100px;
   margin-inline: auto;
 }
 
@@ -66,7 +67,7 @@ main {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 360px);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));  
   gap: 1.25rem;
   margin-top: 2rem;
 }
@@ -80,10 +81,6 @@ main {
   border: 1px solid #cbbba5;
   border-radius: .5rem;
   background: #fffaf2;
-}
-
-#featured-card {
-  background: #f4d7a1;
 }
 
 .featured {
@@ -103,7 +100,7 @@ footer {
   padding-block: 1rem 2rem;
 }
 
-@media (min-width: 700px) and (max-width: 500px) {
+@media (min-width: 500px) and (max-width: 700px) {
   .site-header {
     flex-direction: column;
     align-items: flex-start;
